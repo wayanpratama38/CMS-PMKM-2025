@@ -11,9 +11,9 @@ import ProfilDesaForm from "@/components-custom/form/profilDesaForm";
 import Label from "@/components-custom/Label";
 
 export const metadata: Metadata = {
-  title: "Next.js Profile | TailAdmin - Next.js Dashboard Template",
+  title: "Profil Desa",
   description:
-    "This is Next.js Profile page for TailAdmin - Next.js Tailwind CSS Admin Dashboard Template",
+    "Profil Desa",
 };
 
 export default function ProfilDesa() {

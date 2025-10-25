@@ -5,9 +5,9 @@ import PerangkatDesaForm from "@/components-custom/form/perangkatDesaForm";
 import FasilitasPublikForm from "@/components-custom/form/fasilitasPublikForm";
 
 export const metadata: Metadata = {
-  title: "Next.js Profile | TailAdmin - Next.js Dashboard Template",
+  title: "Fasilitas Publik",
   description:
-    "This is Next.js Profile page for TailAdmin - Next.js Tailwind CSS Admin Dashboard Template",
+    "Fasilitas Publik",
 };
 
 export default function FasilitasPublik() {

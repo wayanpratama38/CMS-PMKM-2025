@@ -9,9 +9,9 @@ import TableWithAction from "@/components/tables/TableWithAction";
 import PerangkatDesaForm from "@/components-custom/form/perangkatDesaForm";
 
 export const metadata: Metadata = {
-  title: "Next.js Profile | TailAdmin - Next.js Dashboard Template",
+  title: "Perangkat Desa",
   description:
-    "This is Next.js Profile page for TailAdmin - Next.js Tailwind CSS Admin Dashboard Template",
+    "Perangkat Desa",
 };
 
 export default function PerangkatDesa() {

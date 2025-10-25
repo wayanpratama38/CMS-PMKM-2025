@@ -1,0 +1,28 @@
+# Dependencies
+node_modules
+
+# Build output
+.next
+out
+build
+dist
+coverage
+
+# Environment & config
+.env
+.env.local
+.env.development
+.env.production
+
+# OS / editor files
+.DS_Store
+*.log
+
+# Ignore git files
+.git
+.gitignore
+
+# Package lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
