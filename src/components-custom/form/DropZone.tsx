@@ -25,7 +25,7 @@ const DropzoneComponent: React.FC<Props> = (props : Props) => {
   return (
    
       <div className="transition border border-gray-300 border-dashed cursor-pointer dark:hover:border-brand-500 dark:border-gray-700 rounded-xl hover:border-brand-500">
-        <form
+        <div
           {...getRootProps()}
           className={`dropzone rounded-xl   border-dashed border-gray-300 p-7 lg:p-10
         ${
@@ -72,7 +72,7 @@ const DropzoneComponent: React.FC<Props> = (props : Props) => {
               Telusuri di Sistem File
             </span>
           </div>
-        </form>
+        </div>
       </div>
   );
 };

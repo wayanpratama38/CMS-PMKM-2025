@@ -9,6 +9,8 @@ import DatePicker from '@/components/form/date-picker';
 import DropzoneComponent from './DropZone';
 import { title } from 'process';
 import TableDenganAksi from '../table/tabelDenganAksi';
+import Button from '@/components/ui/button/Button';
+import { TfiSave } from 'react-icons/tfi';
 
 
 export default function PerangkatDesaForm() {
@@ -40,6 +42,8 @@ export default function PerangkatDesaForm() {
 
   return (
       <div className="space-y-6">
+        <form className='space-y-6'>
+
         <div>
           <Label>Nama</Label>
           <Input type="text" />
@@ -52,6 +56,12 @@ export default function PerangkatDesaForm() {
          <Label>Foto</Label>
          <DropzoneComponent title='Unggah Foto Profil Perangkat Desa' instruction='Unggah foto dengan ekstensi .jgp & .png' />
         </div>
+        <div className='w-full'>
+         <Button size="md" className='w-full' variant="primary" startIcon={<TfiSave />}>
+            Simpan
+         </Button>
+        </div>
+        </form>
         <TableDenganAksi />
       </div>
    
