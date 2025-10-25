@@ -17,7 +17,7 @@ import {
   TableIcon,
   UserCircleIcon,
 } from "../icons/index";
-import { FaAddressCard } from "react-icons/fa";
+import { FaRegAddressCard } from "react-icons/fa6";
 import { GrOrganization } from "react-icons/gr";
 import SidebarWidget from "./SidebarWidget";
 
@@ -40,16 +40,15 @@ const navItems: NavItem[] = [
     path : "/perangkat-desa" 
   },
   {
+    icon: <FaRegAddressCard size={24}/>,
+    name: "Profil Desa",
+    path: "/profil-desa",
+  },
+  {
     icon: <CalenderIcon />,
     name: "Calendar",
     path: "/calendar",
   },
-  {
-    icon: <FaAddressCard size={24}/>,
-    name: "Profil Desa",
-    path: "/profile",
-  },
-
   {
     name: "Forms",
     icon: <ListIcon />,

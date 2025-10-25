@@ -10,11 +10,6 @@ import DropzoneComponent from './DropZone';
 import { title } from 'process';
 import TableDenganAksi from '../table/tabelDenganAksi';
 
-type Props = {
-  title : string,
-  instruction : string
-}
-
 
 export default function PerangkatDesaForm() {
   const [showPassword, setShowPassword] = useState(false);
