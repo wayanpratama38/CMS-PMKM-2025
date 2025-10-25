@@ -17,6 +17,8 @@ import {
   TableIcon,
   UserCircleIcon,
 } from "../icons/index";
+import { FaAddressCard } from "react-icons/fa";
+import { GrOrganization } from "react-icons/gr";
 import SidebarWidget from "./SidebarWidget";
 
 type NavItem = {
@@ -30,7 +32,12 @@ const navItems: NavItem[] = [
   {
     icon: <GridIcon />,
     name: "Dashboard",
-    subItems: [{ name: "Ecommerce", path: "/", pro: false }],
+    path : "/",
+  },
+  {
+    icon : <GrOrganization size={24}/>,
+    name : "Perangkat Desa",
+    path : "/perangkat-desa" 
   },
   {
     icon: <CalenderIcon />,
@@ -38,8 +45,8 @@ const navItems: NavItem[] = [
     path: "/calendar",
   },
   {
-    icon: <UserCircleIcon />,
-    name: "User Profile",
+    icon: <FaAddressCard size={24}/>,
+    name: "Profil Desa",
     path: "/profile",
   },
 
