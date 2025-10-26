@@ -1,9 +1,7 @@
 "use client";
 import React from "react";
-import Badge from "../ui/badge/Badge";
-import { ArrowDownIcon, ArrowUpIcon, BoxIconLine, GroupIcon } from "@/icons";
+import { GroupIcon } from "@/icons";
 import { GrGroup } from "react-icons/gr";
-import BarChartOne from "../charts/bar/BarChartOne";
 import PieChart from "@/components-custom/chart/pieChart";
 
 export const EcommerceMetrics = () => {

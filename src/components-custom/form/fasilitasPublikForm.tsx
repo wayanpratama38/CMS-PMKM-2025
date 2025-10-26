@@ -14,18 +14,6 @@ import { TfiSave } from 'react-icons/tfi';
 
 
 export default function FasilitasPublikForm() {
-  const obj = {
-      id: 1,
-      nama: 'Balai Desa',
-      kategori: 'Pemerintahan',
-      lokasi: 'Jl. Raya Desa No. 1',
-      deskripsi: 'Gedung balai desa yang digunakan untuk kegiatan pemerintahan dan pertemuan warga.',
-      gambar: 'https://cdn.digitaldesa.com/uploads/profil/32.01.30.2006/common/684bbbbf567012373c488653546d4d34.jpeg',
-      status: 'Baik',
-      location: `https://www.google.com/maps/place/0%C2%B038'45.3%22N+108%C2%B059'21.0%22E/@0.6459257,108.9865852,17z/data=!3m1!4b1!4m4!3m3!8m2!3d0.6459203!4d108.9891655?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D`
-    }
- 
-
   // handle upload file
   const onDrop = (acceptedFiles: File[]) => {
     console.log("Files dropped:", acceptedFiles);
@@ -59,12 +47,36 @@ export default function FasilitasPublikForm() {
     },
   });
 
+  const columns = [
+  { header: "Nama Tempat", key: "nama_tempat" },
+  { header: "Kategori Bangunan", key: "kategori_bangungan" },
+  { header: "Kondisi Bangunan", key: "kondisi_bangunan" },
+  { header: "Alamat Lokasi", key: "alamat_lokasi" },
+  { header: "Link Google Maps", key: "link_google_maps" },
+  { header: "Deskripsi", key: "deskripsi" },
+  { header: "Foto", key: "foto" },
+
+];
+  const data = [
+    { nama_tempat: "Kantor Desa", kategori_bangungan : "Pemerintahan", kondisi_bangunan: "Baik",alamat_lokasi : "Jalan Adisucipto",link_google_maps : "https://www.google.com/maps/place/", deskripsi : "Bangunan yang menjadi tempat melakukan administrasi desa", foto : "foto_bangunan.jpg" },
+    
+  ];
+
+  const handleEdit = (row) => {
+    alert(`Edit data: ${row.nama}`);
+  };
+
+  const handleDelete = (row) => {
+    alert(`Hapus data: ${row.nama}`);
+  };
+
+
   return (
       <div className="space-y-6">
         <form className='space-y-6'>
         <div>
           <Label>Nama Tempat</Label>
-          <Input type="text" />
+          <Input type="text" placeholder='SMP Negeri 1 Tjapkala' />
         </div>
         <div>
           <Label>Kategori Bangunan</Label>
@@ -116,7 +128,7 @@ export default function FasilitasPublikForm() {
          </Button>
         </div>
         </form>
-        <TableDenganAksi />
+        <TableDenganAksi columns={columns} data={data} onDelete={handleDelete} onEdit={handleEdit} />
       </div>
         
    

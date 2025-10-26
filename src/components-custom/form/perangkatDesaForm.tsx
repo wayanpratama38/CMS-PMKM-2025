@@ -2,24 +2,15 @@
 import React, { useState } from 'react';
 import Label from '../Label';
 import Input from '../input/InputField';
-import Select from '../Select';
-import { ChevronDownIcon, EyeCloseIcon, EyeIcon, TimeIcon } from '@/icons';
 import { useDropzone } from "react-dropzone";
-import DatePicker from '@/components/form/date-picker';
 import DropzoneComponent from './DropZone';
-import { title } from 'process';
 import TableDenganAksi from '../table/tabelDenganAksi';
 import Button from '@/components/ui/button/Button';
 import { TfiSave } from 'react-icons/tfi';
 
 
 export default function PerangkatDesaForm() {
-  const [showPassword, setShowPassword] = useState(false);
-  const options = [
-    { value: "marketing", label: "Marketing" },
-    { value: "template", label: "Template" },
-    { value: "development", label: "Development" },
-  ];
+  
   const handleSelectChange = (value: string) => {
     console.log("Selected value:", value);
   };
@@ -40,17 +31,38 @@ export default function PerangkatDesaForm() {
     },
   });
 
+  const columns = [
+  { header: "Nama", key: "nama" },
+  { header: "Jabatan", key: "jabatan" },
+  { header: "Foto", key: "foto" },
+  ];
+  const data = [
+    { nama: "I Wayan Satya", jabatan: "Kepala Desa", foto: "foto1.jpg" },
+    { nama: "Made Putra", jabatan: "Sekretaris", foto: "foto2.jpg" },
+  ];
+
+
+
+  const handleEdit = (row) => {
+    alert(`Edit data: ${row.nama}`);
+  };
+
+  const handleDelete = (row) => {
+    alert(`Hapus data: ${row.nama}`);
+  };
+
+
   return (
       <div className="space-y-6">
         <form className='space-y-6'>
 
         <div>
           <Label>Nama</Label>
-          <Input type="text" />
+          <Input type="text" placeholder='Florentina Venny, S.E' />
         </div>
         <div>
           <Label>Jabatan</Label>
-          <Input type="text" placeholder="Sekretaris Desa" />
+          <Input type="text" placeholder="Kepala Desa" />
         </div>
         <div>
          <Label>Foto</Label>
@@ -62,7 +74,7 @@ export default function PerangkatDesaForm() {
          </Button>
         </div>
         </form>
-        <TableDenganAksi />
+        <TableDenganAksi columns={columns} data={data}  onDelete={handleDelete} onEdit={handleEdit} />
       </div>
    
   );

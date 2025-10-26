@@ -2,26 +2,16 @@
 import React, { useState } from 'react';
 import Label from '../Label';
 import Input from '../input/InputField';
-import Select from '../Select';
-import { ChevronDownIcon, EyeCloseIcon, EyeIcon, TimeIcon } from '@/icons';
-import { useDropzone } from "react-dropzone";
-import DatePicker from '@/components/form/date-picker';
-import DropzoneComponent from './DropZone';
-import { title } from 'process';
-import TableDenganAksi from '../table/tabelDenganAksi';
 import TextArea from '../input/TextArea';
 import Button from '@/components/ui/button/Button';
 import { TfiSave } from "react-icons/tfi";
 
-type Props = {
-  title : string,
-  instruction : string
-}
+
 
 
 export default function ProfilDesaForm() {
   const [message, setMessage] = useState("");
-  const [messageTwo, setMessageTwo] = useState("");
+  // const [messageTwo, setMessageTwo] = useState("");
 
   return (
       <form action="post" className="space-y-6">
@@ -49,11 +39,25 @@ export default function ProfilDesaForm() {
         </div>
         <div>
           <Label>Link Video</Label>
-          <Input type='text'></Input>
+          <Input type='text' placeholder='https://www.youtube.com/watch?v=rcbUo29jRpM'></Input>
         </div>
-        <div>
-          <Label>Jumlah Penduduk</Label>
-          <Input type='number'></Input>
+        <div className='grid grid-flow-col auto-cols-auto items-center gap-4'>
+          <div>
+            <Label>Luas Wilayah</Label>
+            <Input type='number' placeholder='22.13 km²'></Input>
+          </div>
+          <div>
+            <Label>Jumlah Penduduk</Label>
+            <Input type='number' placeholder='3276'></Input>
+          </div>
+          <div>
+            <Label>Jumlah KK</Label>
+            <Input type='number' placeholder='935'></Input>
+          </div>
+          <div>
+            <Label>Kepadatan</Label>
+            <Input type='number' placeholder='0.65 jiwa/km²'></Input>
+          </div>
         </div>
         <div className='w-full'>
          <Button size="md" className='w-full' variant="primary" startIcon={<TfiSave />}>

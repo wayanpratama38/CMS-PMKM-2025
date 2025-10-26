@@ -1,7 +1,6 @@
 "use client";
 import { ApexOptions } from "apexcharts";
 import dynamic from "next/dynamic";
-import { MoreDotIcon } from "@/icons";
 import { DropdownItem } from "../ui/dropdown/DropdownItem";
 import { useState } from "react";
 import { Dropdown } from "../ui/dropdown/Dropdown";
@@ -11,7 +10,7 @@ const ReactApexChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
 });
 
-export default function MonthlySalesChart() {
+export default function PertumbuhanPendudukChart() {
   const options: ApexOptions = {
     colors: ["#465fff"],
     chart: {
@@ -19,7 +18,7 @@ export default function MonthlySalesChart() {
       type: "bar",
       height: 180,
       toolbar: {
-        show: false,
+        show: true,
       },
     },
     plotOptions: {
@@ -93,8 +92,8 @@ export default function MonthlySalesChart() {
   };
   const series = [
     {
-      name: "Sales",
-      data: [168, 385, 201, 298, 187, 195, 291, 110, 215, 390, 280, 112],
+      name: "Penduduk",
+      data: [168, 385, 201, 298, 187, 195, 291, 110, 215, 390, 100, 112],
     },
   ];
   const [isOpen, setIsOpen] = useState(false);
@@ -116,7 +115,7 @@ export default function MonthlySalesChart() {
 
         <div className="relative inline-block">
           <button onClick={toggleDropdown} className="dropdown-toggle">
-            <MoreDotIcon className="text-gray-400 hover:text-gray-700 dark:hover:text-gray-300" />
+            {/* <MoreDotIcon className="text-gray-400 hover:text-gray-700 dark:hover:text-gray-300" /> */}
           </button>
           <Dropdown
             isOpen={isOpen}
@@ -145,7 +144,7 @@ export default function MonthlySalesChart() {
             options={options}
             series={series}
             type="bar"
-            height={180}
+            height={300}
           />
         </div>
       </div>
